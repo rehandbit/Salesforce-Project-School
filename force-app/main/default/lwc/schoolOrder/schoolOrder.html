@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Products" icon-name="custom:custom14">
+      <ul class="slds-m-around_medium">
+        <template for:each={productname} for:item="product">
+          <li key={product.Id}>{product.Name}, {product.Price__c}
+            <lightning-input name={product.Id} onchange={handleInputChange} value="0" type="text" label="Quantity"></lightning-input>
+          </li>
+        </template>
+      </ul> 
+      <lightning-button variant="brand" label="Save" onclick={saveButton}></lightning-button>
+    </lightning-card>
+  </template>
